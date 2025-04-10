@@ -1,20 +1,17 @@
 <?php
 
 use App\Models\User;
-use App\Support\Scraper;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Livewire\TodosPage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Password;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Auth\Events\PasswordReset;
-use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
-Route::get('/', \App\Http\Pages\Home::class)->name('home');
+Route::get('/', TodosPage::class)->name('home');
 
 /*
 |--------------------------------------------------------------------------

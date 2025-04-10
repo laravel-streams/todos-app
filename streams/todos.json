@@ -1,0 +1,34 @@
+{
+    "id": "todos",
+    "config": {
+        "source": {
+            "type": "self"
+        }
+    },
+    "fields": [
+        {
+            "handle": "id",
+            "type": "uuid",
+            "required": true,
+            "unique": true,
+            "config": {
+                "default": true
+            }
+        },
+        {
+            "handle": "created_at",
+            "type": "datetime",
+            "required": true,
+            "config": {
+                "default": "now"
+            }
+        },
+        {
+            "handle": "completed",
+            "type": "boolean",
+            "config": {
+                "default": false
+            }
+        }
+    ]
+}

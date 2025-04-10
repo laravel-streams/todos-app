@@ -1,56 +1,61 @@
-## Starter Project
+# Todos App
 
-This is a blank TALL-stack project using Streams.
+This is a simple todos application built with Laravel, Livewire, Alpine.js, and the Streams API client. It demonstrates the use of a custom model and repository for the `todos` stream.
 
-### Features
+## Features
 
-- Users
-- Files
-- Navigation
-- Admin Panel
-=======
-### Getting Started
+- Display a list of todos.
+- Fetch todos using the Streams API.
+- Styled with Tailwind CSS.
 
-```
-composer create-project streams/streams:1.0.x-dev
+## Setup
 
-cd streams
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd todos-app
+   ```
 
-php artisan serve
-```
+2. Install dependencies:
+   ```bash
+   composer install
+   npm install
+   ```
 
-### Cloning Manually
+3. Configure the environment:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-- Clone this repository locally.
-- Run `composer install` within the project.
-- Run `cp .env.example .env` and adjust as needed.
-- Run `php artisan key:generate` to secure the install.
-- Use `php artisan serve` to start your local web server.
-- Use `npm install && npm run dev` to start your dev server.
+4. Run migrations (if needed):
+   ```bash
+   php artisan migrate
+   ```
 
-### Included Packages
+5. Start the development server:
+   ```bash
+   php artisan serve
+   npm run dev
+   ```
 
-Your streams project is now ready for you to start coding.
+6. Access the application at `http://localhost:8000`.
 
-- [Configuration](https://streams.dev/docs/configuration)
-- [Debugging](https://streams.dev/docs/debugging)
+## Streams Definition
 
-## Users
+The `todos` stream is defined in `streams/todos.json` with the following fields:
+- `id`: UUID
+- `title`: String (required)
+- `completed`: Boolean (default: false)
 
-The package comes with the default Laravel `App\Models\User` pre-defined. If you would like to use it, be sure to run migrations first.
+## Livewire Component
 
-```bash
-php artisan migrate
-```
+The `TodosPage` Livewire component fetches todos using the Streams API and displays them in a styled list.
 
-## Included Packages
+## Tailwind CSS
 
-First-party packages:
+Tailwind CSS is used for styling. The main CSS file includes Tailwind's base, components, and utilities directives.
 
-- [Streams Core](https://streams.dev/docs/core)
-- [Streams API](https://streams.dev/docs/api)
-- [Streams UI](https://streams.dev/docs/ui)
-=======
-- [Streams Core](https://streams.dev/packages/streams/core)
-- [Streams API](https://streams.dev/packages/streams/api)
-- [Streams UI](https://streams.dev/packages/streams/ui)
+## License
+
+This project is open-sourced software licensed under the [MIT license](LICENSE).
