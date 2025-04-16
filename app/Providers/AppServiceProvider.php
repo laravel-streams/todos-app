@@ -2,13 +2,14 @@
 
 namespace App\Providers;
 
-use App\Resources\People;
-use App\Resources\Variables;
+use App\Http\Resources;
 use Streams\Ui\Panels\Panel;
+use Streams\Api\ApiInterface;
 use Streams\Ui\Menu\MenuItem;
 use Streams\Ui\Support\Facades\UI;
 use App\Components\Admin\Dashboard;
 use Illuminate\Support\Facades\View;
+use Streams\Api\Support\Facades\API;
 use Streams\Ui\Support\Facades\Colors;
 use Illuminate\Support\ServiceProvider;
 use Streams\Ui\Navigation\NavigationItem;
@@ -18,7 +19,15 @@ class AppServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        //
+        API::routeStreams();
+        API::routeEntries();
+
+        // API::interface(
+        //     ApiInterface::make('api')
+        //         ->endpoints([
+        //             'todos' => Resources\Todos::class,
+        //         ])
+        // );
     }
 
     public function boot()
@@ -35,7 +44,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         View::share('cssVariables', $variables);
-        
+
         UI::panel(
             Panel::make()
                 ->id('admin')

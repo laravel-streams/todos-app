@@ -10,7 +10,7 @@ class TodosPage extends Page
 
     // protected static string $layout = 'ui::layouts.page';
 
-    protected static string $view = 'livewire.todos-page';
+    protected static string $view = 'livewire.todos.index';
 
     public function mount()
     {
