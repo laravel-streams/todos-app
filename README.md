@@ -1,5 +1,7 @@
 # Todos App
 
+!! THIS IS NOT UP TO DATE !!
+
 This is a simple todos application built with Laravel, Livewire, Alpine.js, and the Streams API client. It demonstrates the use of a custom model and repository for the `todos` stream.
 
 ## Features
